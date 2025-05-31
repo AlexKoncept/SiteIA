@@ -1,0 +1,776 @@
+/* Variables de couleur pour les thèmes */
+:root {
+    --primary-color-light: #3498db; /* Bleu */
+    --secondary-color-light: #2ecc71; /* Vert */
+    --background-color-light: #f4f7f6;
+    --text-color-light: #333;
+    --card-bg-light: #ffffff;
+    --nav-bg-light: #ffffff;
+    --footer-bg-light: #2c3e50;
+    --footer-text-light: #ecf0f1;
+    --alternate-bg-light: #e9ecef;
+    --input-bg-light: #fff;
+    --input-border-light: #ccc;
+    --chatbox-border-light: #3498db;
+
+
+    --primary-color-dark: #5dade2; /* Bleu plus clair pour le contraste */
+    --secondary-color-dark: #58d68d; /* Vert plus clair */
+    --background-color-dark: #2c3e50; /* Fond sombre */
+    --text-color-dark: #ecf0f1; /* Texte clair */
+    --card-bg-dark: #34495e; /* Cartes sombres */
+    --nav-bg-dark: #34495e;
+    --footer-bg-dark: #1c2833;
+    --footer-text-dark: #bdc3c7;
+    --alternate-bg-dark: #3b5064;
+    --input-bg-dark: #3b5064;
+    --input-border-dark: #566573;
+    --chatbox-border-dark: #5dade2;
+
+
+    /* Couleurs actuelles basées sur le thème clair par défaut */
+    --primary-color: var(--primary-color-light);
+    --secondary-color: var(--secondary-color-light);
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+    --card-bg: var(--card-bg-light);
+    --nav-bg: var(--nav-bg-light);
+    --footer-bg: var(--footer-bg-light);
+    --footer-text: var(--footer-text-light);
+    --alternate-bg: var(--alternate-bg-light);
+    --input-bg: var(--input-bg-light);
+    --input-border: var(--input-border-light);
+    --chatbox-border: var(--chatbox-border-light);
+
+    --font-main: 'Roboto', sans-serif;
+    --font-headings: 'Montserrat', sans-serif;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+/* Styles pour le thème sombre */
+body.dark-mode {
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --card-bg: var(--card-bg-dark);
+    --nav-bg: var(--nav-bg-dark);
+    --footer-bg: var(--footer-bg-dark);
+    --footer-text: var(--footer-text-dark);
+    --alternate-bg: var(--alternate-bg-dark);
+    --input-bg: var(--input-bg-dark);
+    --input-border: var(--input-border-dark);
+    --chatbox-border: var(--chatbox-border-dark);
+}
+
+/* Styles généraux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.2rem; /* Un peu réduit pour plus d'espace */
+    text-align: center;
+    margin-bottom: 2.5rem; /* Plus d'espace en bas */
+    position: relative;
+}
+h2 i {
+    margin-right: 10px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.content-section ul li { /* Cibler les li dans les sections de contenu uniquement */
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.content-section ul li::before {
+    content: '✓';
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+#ressources ul li::before { /* Style spécifique pour les liens ressources */
+    content: '🔗';
+}
+
+
+.container { /* Non utilisé actuellement, mais bon à avoir */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Header et Navigation */
+header {
+    background-color: var(--nav-bg);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 60px; /* Hauteur fixe pour la nav */
+}
+
+.logo a {
+    font-family: var(--font-headings);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+.nav-links li::before { content: none; } /* Reset pour les li de nav */
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    font-size: 0.95rem; /* Légèrement réduit pour plus de liens */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+    background: var(--secondary-color);
+}
+
+/* Theme Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.theme-icon {
+    font-size: 1.5rem;
+    margin-left: 8px;
+    color: var(--text-color);
+    cursor: default;
+}
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+.theme-switch input {
+    display:none;
+}
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+.slider:before {
+    background-color: #fff;
+    bottom: 2px;
+    content: "";
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    transition: .4s;
+    width: 20px;
+}
+input:checked + .slider {
+    background-color: var(--secondary-color);
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Burger menu pour mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWklMjBhcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=70') no-repeat center center/cover;
+    min-height: 85vh; /* Pour s'assurer qu'il prend de la place */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 2rem 5%;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem; /* Ajusté */
+    margin-bottom: 1rem;
+    color: #fff; /* Forcer la couleur ici car h1 a une var */
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1rem; /* Ajusté */
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff !important; /* Important pour surcharger le a:hover */
+    padding: 0.8rem 1.8rem; /* Ajusté */
+    border-radius: var(--border-radius);
+    font-size: 1rem; /* Ajusté */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Content Sections */
+.content-section {
+    padding: 3rem 5%; /* Espace vertical réduit un peu */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-section.alternate-bg {
+    background-color: var(--alternate-bg);
+    transition: background-color 0.3s ease;
+    border-top: 1px solid var(--input-border); /* Petite séparation */
+    border-bottom: 1px solid var(--input-border);
+}
+
+/* Timeline pour la Genèse */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 2rem auto; /* Ajout de marge en haut */
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    margin-bottom: 30px; /* Espace entre les items */
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::after { /* Cercles sur la timeline */
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--background-color);
+    border: 4px solid var(--primary-color);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+
+.timeline-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: -25px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    top: 15px;
+    box-shadow: 0 0 0 4px var(--background-color); /* Pour mieux le détacher */
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -25px;
+}
+
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: var(--card-bg);
+    position: relative;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease;
+}
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* Grid pour l'état actuel */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.grid-item {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+.grid-item.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Chatbot Demo Section */
+#demo-ia .demo-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+#demo-ia .model-info {
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-top: 1rem;
+}
+
+.chatbot-container {
+    max-width: 700px; /* Un peu plus large */
+    margin: 2rem auto;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbox {
+    height: 350px; /* Un peu plus haut */
+    overflow-y: auto;
+    border: 1px solid var(--chatbox-border);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.user-message, .bot-message {
+    padding: 0.6rem 1rem; /* Un peu plus de padding */
+    border-radius: 18px; /* Plus arrondi */
+    margin-bottom: 0.75rem;
+    max-width: 85%; /* Un peu plus large */
+    word-wrap: break-word;
+    line-height: 1.4;
+    font-size: 0.95rem;
+}
+
+.user-message {
+    background-color: var(--primary-color);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+    background-color: var(--secondary-color);
+    color: white;
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+}
+.bot-message small { /* Pour le message de chargement */
+    display: block;
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-top: 0.3em;
+}
+
+body.dark-mode .user-message {
+    /* Pas besoin de changer si le primary-color-dark a un bon contraste avec blanc */
+}
+body.dark-mode .bot-message {
+    /* Pas besoin de changer si le secondary-color-dark a un bon contraste avec blanc */
+}
+
+
+.chat-input-area {
+    display: flex;
+}
+
+.chat-input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--input-border);
+    border-right: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.chat-input-area input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+.chat-input-area input[type="text"]:disabled {
+    background-color: var(--alternate-bg);
+    cursor: not-allowed;
+}
+
+.chat-input-area button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid var(--primary-color); /* Bordure pour être consistent avec l'input */
+    cursor: pointer;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.chat-input-area button:hover:not(:disabled) {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+.chat-input-area button:disabled {
+    background-color: var(--input-border); /* Couleur grise pour désactivé */
+    border-color: var(--input-border);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Loading dots animation */
+.loading-dots span {
+    animation: blink 1.4s infinite both;
+    font-size: 1.3em; /* Ajustez si besoin */
+}
+.loading-dots span:nth-child(2) {
+    animation-delay: .2s;
+}
+.loading-dots span:nth-child(3) {
+    animation-delay: .4s;
+}
+@keyframes blink {
+    0% { opacity: .2; }
+    20% { opacity: 1; }
+    100% { opacity: .2; }
+}
+
+
+/* Cards pour l'Avenir */
+.future-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    flex-basis: calc(50% - 1rem);
+    max-width: 450px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.conclusion-avenir {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.5rem; /* Plus de padding */
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem; /* Espace avant le footer */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .future-cards .card {
+        flex-basis: calc(50% - 1rem);
+    }
+    .nav-links a {
+        font-size: 0.9rem; /* Encore un peu plus petit si beaucoup de liens */
+    }
+    .nav-links li {
+        margin-left: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h2 { font-size: 2rem; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 1rem; }
+
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: calc(100vh - 60px); /* Hauteur de la nav */
+        top: 60px; /* Hauteur de la nav */
+        background-color: var(--nav-bg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Alignement en haut */
+        width: 70%; /* Un peu plus large pour le confort */
+        max-width: 300px; /* Max width pour ne pas être trop grand */
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out; /* Ease in-out */
+        padding-top: 3rem; /* Plus d'espace en haut */
+        box-shadow: -5px 0px 15px rgba(0,0,0,0.1);
+        overflow-y: auto; /* Si trop de liens */
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 2.5rem; /* Plus d'espace */
+        opacity: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links a {
+        font-size: 1.1rem; /* Plus grand pour mobile */
+        display: block; /* Pour que le after:: prenne toute la largeur */
+        padding: 0.5rem 1rem;
+    }
+    .nav-links a::after { /* Ajuster pour menu mobile */
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .nav-links a:hover::after {
+        left: 50%; /* Garder centré */
+    }
+
+
+    .burger {
+        display: block;
+        z-index: 1001; /* Pour être au-dessus du menu qui coulisse */
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    /* Animation des liens pour menu mobile */
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+    
+    .theme-switch-wrapper {
+        position: absolute;
+        right: 70px; /* Ou 60px si le burger prend 25px + marge */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .timeline::after {
+        left: 30px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px; /* Espace pour l'icône et la ligne */
+        padding-right: 15px; /* Moins de padding à droite */
+    }
+    .timeline-item:nth-child(even) {
+        left: 0%; /* Tous alignés à gauche */
+    }
+    .timeline-item::after, .timeline-item:nth-child(even)::after {
+        left: 20px; /* Position du cercle sur la ligne */
+    }
+    .timeline-icon, .timeline-item:nth-child(even) .timeline-icon {
+        left: 5px; /* Position de l'icône */
+    }
+
+    .future-cards .card {
+        flex-basis: 100%;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .chatbot-container {
+        padding: 1rem;
+    }
+    .chatbox {
+        height: 300px;
+    }
+    .user-message, .bot-message {
+        font-size: 0.9rem;
+        max-width: 90%;
+    }
+}
+
+/* Animation burger */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
