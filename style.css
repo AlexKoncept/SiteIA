@@ -90,9 +90,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    font-size: 2.2rem; /* Un peu réduit pour plus d'espace */
+    font-size: 2.2rem;
     text-align: center;
-    margin-bottom: 2.5rem; /* Plus d'espace en bas */
+    margin-bottom: 2.5rem;
     position: relative;
 }
 h2 i {
@@ -129,7 +129,7 @@ ul {
     padding-left: 0;
 }
 
-.content-section ul li { /* Cibler les li dans les sections de contenu uniquement */
+.content-section ul li {
     margin-bottom: 0.5rem;
     padding-left: 1.5rem;
     position: relative;
@@ -142,17 +142,10 @@ ul {
     left: 0;
     font-weight: bold;
 }
-#ressources ul li::before { /* Style spécifique pour les liens ressources */
+#ressources ul li::before {
     content: '🔗';
 }
 
-
-.container { /* Non utilisé actuellement, mais bon à avoir */
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
 
 /* Header et Navigation */
 header {
@@ -171,7 +164,7 @@ nav {
     padding: 1rem 5%;
     max-width: 1400px;
     margin: 0 auto;
-    height: 60px; /* Hauteur fixe pour la nav */
+    height: 60px;
 }
 
 .logo a {
@@ -189,14 +182,14 @@ nav {
 .nav-links li {
     margin-left: 2rem;
 }
-.nav-links li::before { content: none; } /* Reset pour les li de nav */
+.nav-links li::before { content: none; }
 
 .nav-links a {
     color: var(--text-color);
     font-weight: 500;
     padding: 0.5rem 0;
     position: relative;
-    font-size: 0.95rem; /* Légèrement réduit pour plus de liens */
+    font-size: 0.95rem;
 }
 
 .nav-links a::after {
@@ -288,7 +281,7 @@ input:checked + .slider:before {
 /* Hero Section */
 #hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWklMjBhcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=70') no-repeat center center/cover;
-    min-height: 85vh; /* Pour s'assurer qu'il prend de la place */
+    min-height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -298,14 +291,14 @@ input:checked + .slider:before {
 }
 
 .hero-content h1 {
-    font-size: 2.8rem; /* Ajusté */
+    font-size: 2.8rem;
     margin-bottom: 1rem;
-    color: #fff; /* Forcer la couleur ici car h1 a une var */
+    color: #fff;
     line-height: 1.2;
 }
 
 .hero-content p {
-    font-size: 1.1rem; /* Ajusté */
+    font-size: 1.1rem;
     margin-bottom: 2rem;
     max-width: 700px;
     margin-left: auto;
@@ -314,10 +307,10 @@ input:checked + .slider:before {
 
 .cta-button {
     background-color: var(--primary-color);
-    color: #fff !important; /* Important pour surcharger le a:hover */
-    padding: 0.8rem 1.8rem; /* Ajusté */
+    color: #fff !important;
+    padding: 0.8rem 1.8rem;
     border-radius: var(--border-radius);
-    font-size: 1rem; /* Ajusté */
+    font-size: 1rem;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -331,7 +324,7 @@ input:checked + .slider:before {
 
 /* Content Sections */
 .content-section {
-    padding: 3rem 5%; /* Espace vertical réduit un peu */
+    padding: 3rem 5%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -339,7 +332,7 @@ input:checked + .slider:before {
 .content-section.alternate-bg {
     background-color: var(--alternate-bg);
     transition: background-color 0.3s ease;
-    border-top: 1px solid var(--input-border); /* Petite séparation */
+    border-top: 1px solid var(--input-border);
     border-bottom: 1px solid var(--input-border);
 }
 
@@ -347,7 +340,7 @@ input:checked + .slider:before {
 .timeline {
     position: relative;
     max-width: 900px;
-    margin: 2rem auto; /* Ajout de marge en haut */
+    margin: 2rem auto;
 }
 
 .timeline::after {
@@ -366,7 +359,7 @@ input:checked + .slider:before {
     position: relative;
     background-color: inherit;
     width: 50%;
-    margin-bottom: 30px; /* Espace entre les items */
+    margin-bottom: 30px;
 }
 
 .timeline-item:nth-child(odd) {
@@ -377,7 +370,7 @@ input:checked + .slider:before {
     left: 50%;
 }
 
-.timeline-item::after { /* Cercles sur la timeline */
+.timeline-item::after {
     content: '';
     position: absolute;
     width: 20px;
@@ -408,7 +401,7 @@ input:checked + .slider:before {
     align-items: center;
     font-size: 1.5rem;
     top: 15px;
-    box-shadow: 0 0 0 4px var(--background-color); /* Pour mieux le détacher */
+    box-shadow: 0 0 0 4px var(--background-color);
 }
 
 .timeline-item:nth-child(even) .timeline-icon {
@@ -465,7 +458,7 @@ input:checked + .slider:before {
 }
 
 .chatbot-container {
-    max-width: 700px; /* Un peu plus large */
+    max-width: 700px;
     margin: 2rem auto;
     background-color: var(--card-bg);
     border-radius: var(--border-radius);
@@ -476,7 +469,7 @@ input:checked + .slider:before {
 }
 
 .chatbox {
-    height: 350px; /* Un peu plus haut */
+    height: 350px;
     overflow-y: auto;
     border: 1px solid var(--chatbox-border);
     padding: 1rem;
@@ -487,10 +480,10 @@ input:checked + .slider:before {
 }
 
 .user-message, .bot-message {
-    padding: 0.6rem 1rem; /* Un peu plus de padding */
-    border-radius: 18px; /* Plus arrondi */
+    padding: 0.6rem 1rem;
+    border-radius: 18px;
     margin-bottom: 0.75rem;
-    max-width: 85%; /* Un peu plus large */
+    max-width: 85%;
     word-wrap: break-word;
     line-height: 1.4;
     font-size: 0.95rem;
@@ -509,20 +502,12 @@ input:checked + .slider:before {
     margin-right: auto;
     border-bottom-left-radius: 5px;
 }
-.bot-message small { /* Pour le message de chargement */
+.bot-message small { /* Pour le message de chargement (non utilisé dans cette version, mais peut être utile) */
     display: block;
     font-size: 0.8em;
     opacity: 0.8;
     margin-top: 0.3em;
 }
-
-body.dark-mode .user-message {
-    /* Pas besoin de changer si le primary-color-dark a un bon contraste avec blanc */
-}
-body.dark-mode .bot-message {
-    /* Pas besoin de changer si le secondary-color-dark a un bon contraste avec blanc */
-}
-
 
 .chat-input-area {
     display: flex;
@@ -543,7 +528,7 @@ body.dark-mode .bot-message {
     outline: none;
     border-color: var(--primary-color);
 }
-.chat-input-area input[type="text"]:disabled {
+.chat-input-area input[type="text"]:disabled { /* Non utilisé par défaut dans cette version du chatbot */
     background-color: var(--alternate-bg);
     cursor: not-allowed;
 }
@@ -552,7 +537,7 @@ body.dark-mode .bot-message {
     padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
     color: white;
-    border: 1px solid var(--primary-color); /* Bordure pour être consistent avec l'input */
+    border: 1px solid var(--primary-color);
     cursor: pointer;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     font-size: 1rem;
@@ -563,17 +548,17 @@ body.dark-mode .bot-message {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
 }
-.chat-input-area button:disabled {
-    background-color: var(--input-border); /* Couleur grise pour désactivé */
+.chat-input-area button:disabled { /* Non utilisé par défaut dans cette version du chatbot */
+    background-color: var(--input-border);
     border-color: var(--input-border);
     cursor: not-allowed;
     opacity: 0.7;
 }
 
-/* Loading dots animation */
+/* Loading dots animation (non utilisé dans cette version, mais conservé au cas où) */
 .loading-dots span {
     animation: blink 1.4s infinite both;
-    font-size: 1.3em; /* Ajustez si besoin */
+    font-size: 1.3em;
 }
 .loading-dots span:nth-child(2) {
     animation-delay: .2s;
@@ -619,7 +604,7 @@ body.dark-mode .bot-message {
 .conclusion-avenir {
     text-align: center;
     margin-top: 2rem;
-    padding: 1.5rem; /* Plus de padding */
+    padding: 1.5rem;
     background-color: var(--card-bg);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
@@ -631,7 +616,7 @@ footer {
     color: var(--footer-text);
     text-align: center;
     padding: 2rem 1rem;
-    margin-top: 2rem; /* Espace avant le footer */
+    margin-top: 2rem;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -645,7 +630,7 @@ footer p {
         flex-basis: calc(50% - 1rem);
     }
     .nav-links a {
-        font-size: 0.9rem; /* Encore un peu plus petit si beaucoup de liens */
+        font-size: 0.9rem;
     }
     .nav-links li {
         margin-left: 1.5rem;
@@ -660,47 +645,47 @@ footer p {
     .nav-links {
         position: fixed;
         right: 0px;
-        height: calc(100vh - 60px); /* Hauteur de la nav */
-        top: 60px; /* Hauteur de la nav */
+        height: calc(100vh - 60px);
+        top: 60px;
         background-color: var(--nav-bg);
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; /* Alignement en haut */
-        width: 70%; /* Un peu plus large pour le confort */
-        max-width: 300px; /* Max width pour ne pas être trop grand */
+        justify-content: flex-start;
+        width: 70%;
+        max-width: 300px;
         transform: translateX(100%);
-        transition: transform 0.5s ease-in-out; /* Ease in-out */
-        padding-top: 3rem; /* Plus d'espace en haut */
+        transition: transform 0.5s ease-in-out;
+        padding-top: 3rem;
         box-shadow: -5px 0px 15px rgba(0,0,0,0.1);
-        overflow-y: auto; /* Si trop de liens */
+        overflow-y: auto;
     }
 
     .nav-links li {
         margin-left: 0;
-        margin-bottom: 2.5rem; /* Plus d'espace */
+        margin-bottom: 2.5rem;
         opacity: 0;
         width: 100%;
         text-align: center;
     }
     .nav-links a {
-        font-size: 1.1rem; /* Plus grand pour mobile */
-        display: block; /* Pour que le after:: prenne toute la largeur */
+        font-size: 1.1rem;
+        display: block;
         padding: 0.5rem 1rem;
     }
-    .nav-links a::after { /* Ajuster pour menu mobile */
+    .nav-links a::after {
         right: auto;
         left: 50%;
         transform: translateX(-50%);
     }
     .nav-links a:hover::after {
-        left: 50%; /* Garder centré */
+        left: 50%;
     }
 
 
     .burger {
         display: block;
-        z-index: 1001; /* Pour être au-dessus du menu qui coulisse */
+        z-index: 1001;
     }
 
     .nav-active {
@@ -721,7 +706,7 @@ footer p {
     
     .theme-switch-wrapper {
         position: absolute;
-        right: 70px; /* Ou 60px si le burger prend 25px + marge */
+        right: 70px;
         top: 50%;
         transform: translateY(-50%);
     }
@@ -731,17 +716,17 @@ footer p {
     }
     .timeline-item {
         width: 100%;
-        padding-left: 70px; /* Espace pour l'icône et la ligne */
-        padding-right: 15px; /* Moins de padding à droite */
+        padding-left: 70px;
+        padding-right: 15px;
     }
     .timeline-item:nth-child(even) {
-        left: 0%; /* Tous alignés à gauche */
+        left: 0%;
     }
     .timeline-item::after, .timeline-item:nth-child(even)::after {
-        left: 20px; /* Position du cercle sur la ligne */
+        left: 20px;
     }
     .timeline-icon, .timeline-item:nth-child(even) .timeline-icon {
-        left: 5px; /* Position de l'icône */
+        left: 5px;
     }
 
     .future-cards .card {

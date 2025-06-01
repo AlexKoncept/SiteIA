@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Aventure de l'IA : Passé, Présent, Futur</title>
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
+    <title>L'Aventure de l'IA : Passé, Présent, Futur avec Koncept Assistant</title>
+    <!-- Favicons - Adaptez les chemins si vos favicons sont dans un sous-dossier -->
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome pour les icônes - Optionnel, tu peux remplacer par des SVGs -->
+    <!-- Font Awesome pour les icônes - Optionnel -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<script 
-src="js/transformers.min.js">
-</script>
+    
+    <!-- La ligne pour Transformers.js a été enlevée car nous utilisons un chatbot basé sur des règles -->
 </head>
 <body>
     <header>
@@ -26,7 +27,7 @@ src="js/transformers.min.js">
             <ul class="nav-links">
                 <li><a href="#premices">Prémices & Genèse</a></li>
                 <li><a href="#actuel">État Actuel</a></li>
-                <li><a href="#demo-ia">Démo IA</a></li>
+                <li><a href="#demo-ia">Koncept Assistant</a></li>
                 <li><a href="#avenir">Avenir</a></li>
                 <li><a href="#ressources">Ressources</a></li>
             </ul>
@@ -49,7 +50,7 @@ src="js/transformers.min.js">
         <section id="hero">
             <div class="hero-content">
                 <h1>L'Intelligence Artificielle : <br>Découverte d'un Monde en Évolution</h1>
-                <p>Explorez les origines, comprenez le présent et anticipez l'avenir de l'IA.</p>
+                <p>Explorez les origines, comprenez le présent, anticipez l'avenir de l'IA et discutez avec Koncept Assistant.</p>
                 <a href="#premices" class="cta-button">Commencer l'exploration</a>
             </div>
         </section>
@@ -135,18 +136,18 @@ src="js/transformers.min.js">
         </section>
 
         <section id="demo-ia" class="content-section">
-            <h2><i class="fas fa-comments"></i> Démo : Assistant IA Local</h2>
-            <p class="demo-intro">Testez un exemple d'assistant IA fonctionnant directement dans votre navigateur grâce à <a href="https://github.com/xenova/transformers.js" target="_blank" rel="noopener noreferrer">Transformers.js</a>. Cet assistant utilise un modèle de langage léger. Le premier chargement peut prendre un peu de temps car le modèle est téléchargé.</p>
+            <h2><i class="fas fa-comments"></i> Koncept Assistant</h2>
+            <p class="demo-intro">Discutez avec Koncept Assistant, un assistant virtuel simple basé sur des règles, pour poser vos questions sur l'Intelligence Artificielle.</p>
             <div class="chatbot-container">
                 <div id="chatbox" class="chatbox">
                     <!-- Les messages du chat seront ajoutés ici par JavaScript -->
                 </div>
                 <div class="chat-input-area">
-                    <input type="text" id="userInput" placeholder="Tapez votre message ici..." aria-label="Votre message" disabled>
-                    <button id="sendMessageBtn" disabled>Envoyer</button>
+                    <input type="text" id="userInput" placeholder="Posez votre question à Koncept Assistant..." aria-label="Votre message">
+                    <button id="sendMessageBtn">Envoyer</button>
                 </div>
             </div>
-            <p class="model-info">Modèle utilisé (exemple) : Xenova/blenderbot_small-90M. La qualité des réponses est limitée par la taille du modèle.</p>
+            <p class="model-info">Koncept Assistant est un exemple de chatbot simple pour illustrer les interactions basiques.</p>
         </section>
 
 
@@ -187,7 +188,6 @@ src="js/transformers.min.js">
                 <li><a href="https://www.deeplearning.ai/" target="_blank" rel="noopener noreferrer">DeepLearning.AI (Cours par Andrew Ng)</a></li>
                 <li><a href="https://openai.com/blog/" target="_blank" rel="noopener noreferrer">Blog OpenAI</a></li>
                 <li><a href="https://deepmind.google/discover/blog/" target="_blank" rel="noopener noreferrer">Blog DeepMind</a></li>
-                <li><a href="https://huggingface.co/docs/transformers.js/index" target="_blank" rel="noopener noreferrer">Transformers.js Documentation (pour la démo)</a></li>
                 <li><a href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noopener noreferrer">ArXiv - Artificial Intelligence (Publications de recherche)</a></li>
                 <li>Des livres comme "Superintelligence" de Nick Bostrom, "Life 3.0" de Max Tegmark, ou "L'IA expliquée à mon boss" de Jean-Claude Heudin.</li>
             </ul>
@@ -195,8 +195,8 @@ src="js/transformers.min.js">
     </main>
 
     <footer>
-        <p>© 2024 IA Explorée. Tous droits réservés.</p>
-        <p>Une exploration du monde de l'Intelligence Artificielle. Développé avec <i class="fas fa-heart" style="color:red;"></i> et IA.</p>
+        <p>© 2024 IA Explorée & Koncept Assistant. Tous droits réservés.</p>
+        <p>Une exploration du monde de l'Intelligence Artificielle. Développé avec <i class="fas fa-heart" style="color:red;"></i> et une touche d'IA.</p>
     </footer>
 
     <script src="script.js"></script>
