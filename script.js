@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let response = "Je ne suis pas sûr de comprendre. Pouvez-vous reformuler s'il vous plaît ?"; // Réponse par défaut
 
         const rules = [
-            { pattern: /bonjour|salut|hello|coucou/i, answer: "Bonjour ! Je suis Koncept Assistant. Comment puis-je vous aider concernant l'IA aujourd'hui ?" },
+            { pattern: /bonjour|salut|hello|coucou|slt|Wesh/i, answer: "Bonjour ! Je suis Koncept Assistant. Comment puis-je vous aider concernant l'IA aujourd'hui ?" },
             { pattern: /comment (vas-tu|allez-vous)/i, answer: "Je suis un programme informatique, toujours prêt à discuter d'IA ! Et vous, comment allez-vous ?" },
             { pattern: /quel est ton nom|qui es-tu/i, answer: "Je suis Koncept Assistant, votre guide virtuel pour explorer le monde de l'IA sur ce site." },
             { pattern: /(merci beaucoup|remercie)/i, answer: "De rien ! C'est un plaisir de vous assister." },
@@ -154,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sendMessageBtnEl.disabled = false;
 
             addMessageToChatbox("🤖 Bonjour ! Je suis Koncept Assistant. Posez-moi une question sur l'IA ou explorez le site !", 'bot');
-            if (userInputEl) userInputEl.focus(); // Mettre le focus sur l'input
             
             sendMessageBtnEl.addEventListener('click', handleSendMessage);
             userInputEl.addEventListener('keypress', function(event) {
